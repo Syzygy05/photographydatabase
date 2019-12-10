@@ -8,7 +8,7 @@ CREATE TABLE Photo
 	Resolution VARCHAR(20),
 	Price int,
 	`Date` Datetime,
-	TransID int,
+	TransID int AUTO_INCREMENT,
 	PName VARCHAR(255),
 	PBDate Datetime,
 
