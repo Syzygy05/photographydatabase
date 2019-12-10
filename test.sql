@@ -2,7 +2,7 @@ CREATE TABLE Photo
 (
 	PhotoID int NOT NULL,
 	Speed int,
-	Film VARCHAR(255),
+	Film int,
 	FStop FLOAT(2,1),
 	Color CHAR(3),
 	Resolution VARCHAR(20),
