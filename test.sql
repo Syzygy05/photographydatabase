@@ -3,7 +3,7 @@ CREATE TABLE Photo
 	PhotoID int NOT NULL,
 	Speed int,
 	Film VARCHAR(255),
-	FStop DOUBLE PRECISION,
+	FStop FLOAT(2,1),
 	Color CHAR(3),
 	Resolution VARCHAR(20),
 	Price int,
@@ -11,7 +11,7 @@ CREATE TABLE Photo
 	TransID int,
 	PName VARCHAR(255),
 	PBDate Datetime,
-	PRIMARY KEY (PhotoID),
+	PRIMARY KEY (PhotoID)
 	FOREIGN KEY (TransID) REFERENCES Transaction(TransID),
 	FOREIGN KEY (PName, PBDate) REFERENCES Photographer(PName, PBDate)
 );
@@ -21,7 +21,7 @@ CREATE TABLE Landscape
 	PhotoID int NOT NULL,
 	Place VARCHAR(255),
 	Country VARCHAR(255),
-	PRIMARY KEY (PhotoID),
+	PRIMARY KEY (PhotoID)
 	FOREIGN KEY (PhotoID) REFERENCES Photo(PhotoID),
 	FOREIGN KEY (Place, Country) REFERENCES Location(Place, Country)
 
@@ -39,7 +39,7 @@ CREATE TABLE Abstract
 (
 	PhotoID int,
 	Comment VARCHAR(255),
-	PRIMARY KEY (PhotoID),
+	PRIMARY KEY (PhotoID)
 	FOREIGN KEY (PhotoID) REFERENCES Photo(PhotoID)
 );
 
@@ -48,7 +48,7 @@ CREATE TABLE Portrait
 (
 	PhotoID int NOT NULL,
 	Head char(1),
-	PRIMARY KEY (PhotoID),
+	PRIMARY KEY (PhotoID)
 	FOREIGN KEY PhotoID REFERENCES Photo(PhotoID)
 
 );
@@ -60,7 +60,7 @@ CREATE TABLE Models (
 	MBDate Datetime,
 	Agency VARCHAR(255),
 
-	PRIMARY KEY (PhotoID, MName, MBDate),
+	PRIMARY KEY (PhotoID, MName, MBDate)
 	FOREIGN KEY PhotoID REFERENCES Portrait(PhotoID),
 	FOREIGN KEY (MName, MBDate) REFERENCES Model(MName, MBDate)
 );
@@ -71,7 +71,7 @@ CREATE TABLE Model (
 	MBio VARCHAR( 255 ),
 	MSex Char (1),
 
-	PRIMARY KEY (PhotoID, MName)
+	PRIMARY KEY (MName, MBDate)
 
 );
 
@@ -97,7 +97,10 @@ CREATE TABLE Influences (
 	RPBDate Datetime,
 
 	PRIMARY KEY (EPName, EPBDate, RPName, RPBDate)
+	FOREIGN KEY (EPName, EPBDate) REFERENCES Photographer(PName, PBDate)
+	FOREIGN KEY (RPName, RPBDate) REFERENCES Photographer(PName, PBDate)
 );
+
 
 CREATE TABLE Transaction (
 
@@ -106,12 +109,11 @@ CREATE TABLE Transaction (
 	CardNo int,
 	CardType VARCHAR(100),
 	CardExpDate Datetime,
-	TotalAmount DOUBLE PRECISION,
+	TotalAmount FLOAT(6,2),
 	LoginName VARCHAR(100),
 
-	PRIMARY KEY (TransID),
+	PRIMARY KEY (TransID)
 	FOREIGN KEY LoginName REFERENCES Customer(LoginName)
-
 
 );
 
