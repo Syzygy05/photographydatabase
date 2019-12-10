@@ -11,6 +11,7 @@ CREATE TABLE Photo
 	TransID int,
 	PName VARCHAR(255),
 	PBDate Datetime,
+
 	PRIMARY KEY (PhotoID)
 	FOREIGN KEY (TransID) REFERENCES Transaction(TransID),
 	FOREIGN KEY (PName, PBDate) REFERENCES Photographer(PName, PBDate)
@@ -21,6 +22,7 @@ CREATE TABLE Landscape
 	PhotoID int NOT NULL,
 	Place VARCHAR(255),
 	Country VARCHAR(255),
+
 	PRIMARY KEY (PhotoID)
 	FOREIGN KEY (PhotoID) REFERENCES Photo(PhotoID),
 	FOREIGN KEY (Place, Country) REFERENCES Location(Place, Country)
@@ -49,7 +51,7 @@ CREATE TABLE Portrait
 	PhotoID int NOT NULL,
 	Head char(1),
 	PRIMARY KEY (PhotoID)
-	FOREIGN KEY PhotoID REFERENCES Photo(PhotoID)
+	FOREIGN KEY (PhotoID) REFERENCES Photo(PhotoID)
 
 );
 
@@ -61,7 +63,7 @@ CREATE TABLE Models (
 	Agency VARCHAR(255),
 
 	PRIMARY KEY (PhotoID, MName, MBDate)
-	FOREIGN KEY PhotoID REFERENCES Portrait(PhotoID),
+	FOREIGN KEY (PhotoID) REFERENCES Portrait(PhotoID),
 	FOREIGN KEY (MName, MBDate) REFERENCES Model(MName, MBDate)
 );
 
@@ -113,7 +115,7 @@ CREATE TABLE Transaction (
 	LoginName VARCHAR(100),
 
 	PRIMARY KEY (TransID)
-	FOREIGN KEY LoginName REFERENCES Customer(LoginName)
+	FOREIGN KEY (LoginName) REFERENCES Customer(LoginName)
 
 );
 
