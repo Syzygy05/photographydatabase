@@ -1,5 +1,5 @@
 CREATE TABLE Photo
-( 
+(
 	PhotoID int NOT NULL,
 	Speed int,
 	Film VARCHAR(255),
@@ -35,7 +35,7 @@ CREATE TABLE Location
 	PRIMARY KEY (Place, Country)
 );
 
-CREATE TABLE Abstract 
+CREATE TABLE Abstract
 (
 	PhotoID int,
 	Comment VARCHAR(255),
@@ -44,7 +44,7 @@ CREATE TABLE Abstract
 );
 
 
-CREATE TABLE Portrait 
+CREATE TABLE Portrait
 (
 	PhotoID int NOT NULL,
 	Head char(1),
@@ -112,6 +112,7 @@ CREATE TABLE Transaction (
 	PRIMARY KEY (TransID),
 	FOREIGN KEY LoginName REFERENCES Customer(LoginName)
 
+
 );
 
 CREATE TABLE Customer (
@@ -130,4 +131,3 @@ CREATE TABLE Customer (
 	PRIMARY KEY (LoginName)
 
 );
-
