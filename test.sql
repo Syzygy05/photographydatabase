@@ -127,7 +127,7 @@ CREATE TABLE Transaction (
 	TDate Datetime,
 	CardNo int UNIQUE,
 	CardType VARCHAR(100),
-	CardExpDate Datetime,
+	CardExpDate Date,
 	TotalAmount FLOAT(6,2),
 	LoginName VARCHAR(100),
 
@@ -147,7 +147,6 @@ CREATE TABLE Customer (
 	Password VARCHAR(100) NOT NULL,
 	CName VARCHAR(255),
 	CType VARCHAR(50),
-	CardNo int,
 	BillingAddress VARCHAR(255),
 	Str1 VARCHAR(100),
 	Str2 VARCHAR(100),
