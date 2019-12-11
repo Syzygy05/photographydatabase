@@ -35,4 +35,9 @@ WHERE
 	PhotoID=57;
 
 
+SELECT *
+FROM Photo, Transaction
+WHERE 
+	Photo.Sold='Y' AND
+	Transaction.TransID=40;
 
