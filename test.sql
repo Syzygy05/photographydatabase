@@ -33,7 +33,7 @@ CREATE TABLE Landscape
 	/*ON DELETE CASCADE*/
 	/*ON UPDATE CASCADE*/
 	FOREIGN KEY (Place, Country) REFERENCES Location(Place, Country)
-	/*ON DELETE SET DEFAULT*/
+	/*ON DELETE SET NULL*/
 	/*ON UPDATE CASCADE*/
 );
 
@@ -96,7 +96,7 @@ CREATE TABLE Model (
 CREATE TABLE Photographer (
 
 	PName VARCHAR(255),
-	PBDate Datetime,
+	PBDate Date,
 	PBio VARCHAR(255),
 	PAddress VARCHAR(255),
 	PNationality VARCHAR(100),
@@ -108,35 +108,32 @@ CREATE TABLE Photographer (
 
 CREATE TABLE Influences (
 	EPName VARCHAR(255),
-	EPBDate Datetime,
+	EPBDate Date,
 	RPName VARCHAR(255),
-	RPBDate Datetime,
+	RPBDate Date,
 
 	PRIMARY KEY (EPName, EPBDate, RPName, RPBDate)
 	FOREIGN KEY (EPName, EPBDate) REFERENCES Photographer(PName, PBDate)
 	/*ON UPDATE CASCADE*/
-	/*ON DELETE CADACDE*/
+	/*ON DELETE CASCADE*/
 	FOREIGN KEY (RPName, RPBDate) REFERENCES Photographer(PName, PBDate)
 	/*ON UPDATE CASCADE*/
-	/*ON DELETE CADACDE*/
+	/*ON DELETE CASCADE*/
 );
 
 
 CREATE TABLE Transaction (
 
-	TransID int NOT NULL,
+	TransID int AUTO_INCREMENT,
 	TDate Datetime,
 	CardNo int,
 	CardType VARCHAR(100),
-	CardExpDate Datetime,
+	CardExpDate Date,
 	TotalAmount FLOAT(6,2),
 	LoginName VARCHAR(100),
 
 	PRIMARY KEY (TransID)
 	FOREIGN KEY (LoginName) REFERENCES Customer(LoginName)
-	/*ON UPDATE CASCADE*/
-	/*ON DELETE SET NULL*/
-	FOREIGN KEY (CardNo) REFERENCES Customer(CardNo)
 	/*ON UPDATE CASCADE*/
 	/*ON DELETE SET NULL*/
 
@@ -148,7 +145,6 @@ CREATE TABLE Customer (
 	Password VARCHAR(100) NOT NULL,
 	CName VARCHAR(255),
 	CType VARCHAR(50),
-	CardNo int,
 	BillingAddress VARCHAR(255),
 	Str1 VARCHAR(100),
 	Str2 VARCHAR(100),
