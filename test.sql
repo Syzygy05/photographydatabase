@@ -123,10 +123,9 @@ CREATE TABLE Influences (
 
 
 CREATE TABLE Transaction (
-
 	TransID int AUTO_INCREMENT,
 	TDate Datetime,
-	CardNo int,
+	CardNo int UNIQUE,
 	CardType VARCHAR(100),
 	CardExpDate Date,
 	TotalAmount FLOAT(6,2),
