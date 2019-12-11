@@ -33,7 +33,7 @@ CREATE TABLE Landscape
 	/*ON DELETE CASCADE*/
 	/*ON UPDATE CASCADE*/
 	FOREIGN KEY (Place, Country) REFERENCES Location(Place, Country)
-	/*ON DELETE SET DEFAULT*/
+	/*ON DELETE SET NULL*/
 	/*ON UPDATE CASCADE*/
 );
 
@@ -108,17 +108,17 @@ CREATE TABLE Photographer (
 
 CREATE TABLE Influences (
 	EPName VARCHAR(255),
-	EPBDate Datetime,
+	EPBDate Date,
 	RPName VARCHAR(255),
-	RPBDate Datetime,
+	RPBDate Date,
 
 	PRIMARY KEY (EPName, EPBDate, RPName, RPBDate)
 	FOREIGN KEY (EPName, EPBDate) REFERENCES Photographer(PName, PBDate)
 	/*ON UPDATE CASCADE*/
-	/*ON DELETE CADACDE*/
+	/*ON DELETE CASCADE*/
 	FOREIGN KEY (RPName, RPBDate) REFERENCES Photographer(PName, PBDate)
 	/*ON UPDATE CASCADE*/
-	/*ON DELETE CADACDE*/
+	/*ON DELETE CASCADE*/
 );
 
 
@@ -133,9 +133,6 @@ CREATE TABLE Transaction (
 
 	PRIMARY KEY (TransID)
 	FOREIGN KEY (LoginName) REFERENCES Customer(LoginName)
-	/*ON UPDATE CASCADE*/
-	/*ON DELETE SET NULL*/
-	FOREIGN KEY (CardNo) REFERENCES Customer(CardNo)
 	/*ON UPDATE CASCADE*/
 	/*ON DELETE SET NULL*/
 
