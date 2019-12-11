@@ -124,9 +124,12 @@ CREATE TABLE Influences (
 
 CREATE TABLE Transaction (
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> e0e9ebcbe704f099301ba518f614828b104ce671
+=======
+>>>>>>> 2daff3ab431cc69628acac50db8054beb1b09945
 	TransID int AUTO_INCREMENT,
 	TDate Datetime,
 	CardNo int UNIQUE,
