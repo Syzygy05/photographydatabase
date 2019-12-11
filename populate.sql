@@ -37,3 +37,21 @@ INSERT INTO Model (
 	MName, MBDate, MBio, MSex ) Values (
 	'Sarah OConnor', 12-18-1951, 'cool girl', 'F' );
 
+INSERT INTO Photo (
+	PhotoID, Speed, Film FStop, Color, Resolution, Price, `Date`, PName, PBDate ) Values (
+	33, 10, 12.3, 'YES', '640x480', 100.23, 6-6-1966, 'Sally', '6-2-1983' );
+
+INSERT INTO Photo (
+	PhotoID, Speed, Film FStop, Color, Resolution, Price, `Date`, PName, PBDate ) Values (
+	31, 11, 15.2, 'NO', '640x480', 150.23, 1-3-1987, 'Jeff', '11-2-1998' );
+
+INSERT INTO Photo (
+	PhotoID, Speed, Film FStop, Color, Resolution, Price, `Date`, PName, PBDate ) Values (
+	30, 12, 13.2, 'yes', '640x480', 65.50, 4-6-1999, 'Tommy', '12-19-1951' );
+
+
+
+
+
+
+ 
