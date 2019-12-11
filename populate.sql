@@ -23,4 +23,17 @@ INSERT INTO Photographer (
 	'Martin', 7-5-1975, 'cooler than jeff', '32 wywietrnzik avenue', 'Egyptian' );
 
 
+INSERT INTO Model (
+	MName, MBDate, MBio, MSex ) Values (
+	'Tommy', 12-18-1951, 'straight up gangster', 'M' );
+
+
+INSERT INTO Model (
+	MName, MBDate, MBio, MSex ) Values (
+	'Dave', 12-18-1951, 'really wanted to be an engineer instead', 'M' );
+
+
+INSERT INTO Model (
+	MName, MBDate, MBio, MSex ) Values (
+	'Sarah OConnor', 12-18-1951, 'cool girl', 'F' );
 
