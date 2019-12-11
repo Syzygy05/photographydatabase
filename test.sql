@@ -96,7 +96,7 @@ CREATE TABLE Model (
 CREATE TABLE Photographer (
 
 	PName VARCHAR(255),
-	PBDate Datetime,
+	PBDate Date,
 	PBio VARCHAR(255),
 	PAddress VARCHAR(255),
 	PNationality VARCHAR(100),
@@ -123,10 +123,9 @@ CREATE TABLE Influences (
 
 
 CREATE TABLE Transaction (
-
-	TransID int NOT NULL,
+	TransID int AUTO_INCREMENT,
 	TDate Datetime,
-	CardNo int,
+	CardNo int UNIQUE,
 	CardType VARCHAR(100),
 	CardExpDate Datetime,
 	TotalAmount FLOAT(6,2),
