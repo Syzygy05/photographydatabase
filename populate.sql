@@ -49,13 +49,14 @@ INSERT INTO Photographer (
 
 /* Photographer 5 */
 INSERT INTO Photographer (
+
         PName, PBDate, PBio, PAddress, PNationality ) VALUES (
         'Will Smith', '1923-1-1', 'Lived in NYC.', '234 Jefferson Blvd, Savannah, Georgia 83721', 'Canadian' );
 
 /* Photographer 6 */
 INSERT INTO Photographer (
         PName, PBDate, PBio, PAddress, PNationality ) VALUES (
-        'Jodie Foster', '1925-12-17', 'Lived in France.', '2564 Harlem Ave, NYC, New York 74857', 'Mexican' );
+        'Jodie Foster', '1925-12-17', 'Lived in France.', '2564 Harlem Ave, NYC, New York 74857', 'Mexican' 
 
 /* Photographer 7 */
 INSERT INTO Photographer (
@@ -83,6 +84,7 @@ INSERT INTO Model (
 	MName, MBDate, MBio, MSex ) Values (
 	'Tommy LeeJones', '1951-12-18', 'Model F', 'M' );
 
+
 /* Model 2 */
 INSERT INTO Model (
 	MName, MBDate, MBio, MSex ) Values (
@@ -92,6 +94,7 @@ INSERT INTO Model (
 INSERT INTO Model (
 	MName, MBDate, MBio, MSex ) Values (
 	'Sarah OConnor', '1995-5-3', 'Model D', 'F' );
+
 
 /* Model 4 */
 INSERT INTO Model (
@@ -107,6 +110,7 @@ INSERT INTO Model (
 INSERT INTO Model (
 	MName, MBDate, MBio, MSex ) Values (
 	'Jennifer Lopez', '1956-2-6', 'Model A', 'M' );
+
 
 /*-------------------------------------------------------------------------------------------------------------------------------------------*/
 
@@ -163,6 +167,7 @@ INSERT INTO Photo (
         47, 25, 35, 1.6, 'NO', '10:10', 15.00, '1952-8-16', 'Jackie Chan', '1911-6-23' );
 
 
+
 /* Photo 10 */
 INSERT INTO Photo (
         PhotoID, Speed, Film, FStop, Color, Resolution, Price, `Date`, PName, PBDate ) Values (
@@ -170,11 +175,13 @@ INSERT INTO Photo (
 
 /* Photo 11 */
 INSERT INTO Photo (
+
         PhotoID, Speed, Film, FStop, Color, Resolution, Price, `Date`, PName, PBDate ) Values (
         49, 25, 35, 1.6, 'NO', '10:10', 15.00, '1901-1-2', 'Jodie Foster', '1925-12-17' );
 
 /* Photo 12 */
 INSERT INTO Photo (
+
         PhotoID, Speed, Film, FStop, Color, Resolution, Price, `Date`, PName, PBDate ) Values (
         50, 25, 35, 1.6, 'NO', '10:10', 15.00, '1902-1-3', 'Jodie Foster', '1925-12-17' );
 
